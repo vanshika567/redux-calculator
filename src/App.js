@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import {useDispatch} from "react-redux";
+import {
+  calculate,
+  deleteLastEntry,
+  clear,
+  evaluateExpression
+} from "./redux/actions/actions";
+import Calculator from "./components/Calculator";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export function App(props) {
+  
+ const dispatch=useDispatch()
+ const clearscreen= () => {
+  dispatch(clear());
 }
-
+const evaluate= () => {
+  dispatch(evaluateExpression());
+}
+const deleteexpr=() => {
+  dispatch(deleteLastEntry());
+}
+const calculation =(buttonKey)=> {
+      dispatch(calculate(buttonKey));
+    }
+    return (
+      <div className="calculator--container">
+        <Calculator.Screen {...props}/>
+        <Calculator.Keypad {...props} clear={clearscreen} evaluate={evaluate} delete={deleteexpr} calculate={calculation}/>
+      </div>
+    );
+  }
+  
 export default App;
