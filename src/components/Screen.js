@@ -4,7 +4,7 @@ import { Textfit } from 'react-textfit';
 import {useSelector } from "react-redux";
 import * as fromCalculator from "./../redux/store";
 
-export default () => {
+const Screen=() => {
     
     const expression=useSelector((state)=>{
     return fromCalculator.getExpression(state)
@@ -33,3 +33,4 @@ return (
     </div>
   )
 }
+export default Screen;

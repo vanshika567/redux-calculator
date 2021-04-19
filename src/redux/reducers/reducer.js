@@ -27,7 +27,7 @@ function setExpression({ expression, total }, action) {
   }
 }
 
-export default (state = initialState, action) => {
+const calculatorReducer=(state = initialState, action) => {
   switch (action.type) {
     case types.SET_EXPRESSION:
       let expression = setExpression(state, action);
@@ -64,3 +64,4 @@ export default (state = initialState, action) => {
       return state;
   }
 };
+export default calculatorReducer;
