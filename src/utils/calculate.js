@@ -13,6 +13,6 @@ const Calculate=(expression) => {
         throw new Error('Cannot start the expression with invalid operators')
       }
     }
-    return newfn
+    return newfn()
   }
   export default Calculate;
