@@ -9,8 +9,7 @@ export default ({ onButtonClick, buttonKey}) => {
     buttonKey === '0' ? 'btn--zero': ''
   ];
 
-
-  return (
+ return (
     <button
       name={buttonKey}
       className={ classNames.join(' ').trim()}

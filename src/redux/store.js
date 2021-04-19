@@ -10,6 +10,7 @@ export default createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
+
 export const getExpression = (state) => {
    return state.calculator.expression
 }

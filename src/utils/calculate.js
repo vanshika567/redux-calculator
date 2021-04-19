@@ -11,6 +11,5 @@ export default (expression) => {
         throw new Error('Cannot start the expression with invalid operators')
       }
     }
-  
     return new Function(`return ${matched[0]}`)()
   }

@@ -10,7 +10,6 @@ import Calculator from "./components/Calculator";
 import "./App.css";
 
 export function App(props) {
-  
  const dispatch=useDispatch()
  const clearscreen= () => {
   dispatch(clear());

@@ -7,5 +7,6 @@ export const keypadKeys = [
   ]
   
   export const operators = ['*', '-', '+', '/', '='];
+  
   export const specialOperators = ['c','Del'];
   

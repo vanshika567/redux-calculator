@@ -7,21 +7,17 @@ export const calculate = (key) => {
   }
 }
 
-
 export const clear = () => {
   return {
     type: types.CLEAR_EXPRESSION
   }
 }
 
-
-
 export const deleteLastEntry = () => {
   return {
     type: types.DELETE_LAST_EXPRESSION_ENTRY
   }
 }
-
 
 export const evaluateExpression = () => {
   return {

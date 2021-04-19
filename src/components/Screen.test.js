@@ -2,7 +2,6 @@ import React from "react";
 import Screen from "./Screen";
 import Enzyme, { mount } from 'enzyme';
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
-
 import store from "../redux/store";
 import {Provider} from "react-redux";
 

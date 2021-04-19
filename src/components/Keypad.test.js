@@ -12,14 +12,10 @@ jest.mock('react-router-dom', () => ({
     useDispatch: () => ({
     })
 }));
+
 describe('<TodoList/>' , () => {
     let props;
     let wrapper;
-    const handleClick = jest.fn();
-   // const clear = jest.fn();
-    const evaluateExpression = jest.fn();
-    const deleteLastEntry = jest.fn();
-    const calculate = jest.fn();
 
     Enzyme.configure({ adapter: new Adapter() })
         wrapper = mount( <Provider store={store}><Keypad {...props} /> </Provider>)

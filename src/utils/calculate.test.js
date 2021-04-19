@@ -1,17 +1,5 @@
-// import React from 'react';
-// import Enzyme, { shallow } from 'enzyme';
-// import EnzymeAdapter from 'enzyme-adapter-react-16';
 import Calculate from './calculate';
 
-// Enzyme.configure({ adapter: new EnzymeAdapter() })
-
-// const wrapper = shallow(<Calculate />);
-
-
-// test('Checking the backdrop', ()=>{
-//     wrapper.find('.Backdrop').simulate('click');
-//     expect(props.show).toBeTruthy();
-// });
 describe('Calculate', () => {
     let expression;
      test('evaluates expression correctly', () => {
@@ -34,6 +22,4 @@ describe('Calculate', () => {
         expression = '/12-6'
         expect(Calculate(expression)).toThrow();
       })
-
-
 })
