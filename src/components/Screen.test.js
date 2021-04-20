@@ -16,7 +16,6 @@ describe('<Screen />' , () => {
   Enzyme.configure({ adapter: new Adapter() })
   beforeEach(() => {
       wrapper = mount( <Provider store={store}><Screen /> </Provider>)
-      console.log(wrapper.debug())
   })
   test('render the screen--container', () => {
     expect(wrapper.find(".screen--container")).toBeTruthy;
@@ -24,6 +23,5 @@ describe('<Screen />' , () => {
     test('has a dummy test', () => {
         expect("Textfit").toBeTruthy;
     });
-
 })
 

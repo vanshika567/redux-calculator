@@ -9,9 +9,7 @@ let initialState = {
 function setExpression({ expression, total }, action) {
   
   if (/[\d]*[-+%*/.]$/.exec(expression) && /[-+%*/.]/.exec(action.payload)) {
-    console.log("b", expression);
     expression = expression.slice(0, expression.length - 1);
-    console.log("a", expression);
   }
 
   switch (action.type) {

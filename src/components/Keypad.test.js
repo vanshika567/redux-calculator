@@ -1,9 +1,6 @@
 import React from "react";
 import Keypad from "./Keypad";
 import Enzyme, { mount } from 'enzyme';
-import Calculator from "./Calculator";
-import store from "../redux/store";
-import {Provider} from "react-redux";
 import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 
 
@@ -13,39 +10,23 @@ jest.mock('react-router-dom', () => ({
     })
 }));
 
-describe('<TodoList/>' , () => {
-    let props;
+describe('<keypad />' , () => {
     let wrapper;
-
     Enzyme.configure({ adapter: new Adapter() })
-        wrapper = mount( <Provider store={store}><Keypad {...props} /> </Provider>)
-        beforeEach(() => {
-            wrapper.setProps( {
-                clear:jest.fn()
-            });
-        
-        //console.log(wrapper.debug())
-    })
-    
+        wrapper = mount(<Keypad />)
+      
     test("show Calculator.Button component",()=>{
         expect(wrapper.find("Calculator.Button")).toBeTruthy;
     })
     
- test('test Calculator.Button' , () => {
+    test('render the block', () => {
+        expect(wrapper.find(".block")).toBeTruthy;
+        })
 
-    
-    wrapper.find('button[name="c"]').simulate("click");
-    expect(wrapper.prop("clear")).toBeTruthy()
-
-}) 
-test('render the block', () => {
-    expect(wrapper.find(".block")).toBeTruthy;
+    test('render the keypad', () => {
+        expect(wrapper.find(".keypad")).toBeTruthy;
+        })
     })
-
-test('render the keypad', () => {
-    expect(wrapper.find(".keypad")).toBeTruthy;
-    })
-})
 
 
   

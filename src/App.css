@@ -14,19 +14,6 @@
   color: white;
 }
 
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 #root{
   background: rgb(247, 237, 237);
   display: flex;
@@ -141,7 +128,6 @@
 
 @media all and (max-width: 400px) {
   .calculator--container{
-    /* height: 70vh; */
     width: 315px;
   }
 }
