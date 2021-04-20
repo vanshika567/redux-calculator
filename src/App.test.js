@@ -4,6 +4,7 @@ import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import { App } from './App';
 import store from "./redux/store";
 import {Provider} from "react-redux";
+import ReactDOM from "react-dom";
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -28,6 +29,11 @@ describe('<App />', () => {
     })
   })
 
+  test("renders App withouth crashing",()=>{
+    const div = document.createElement('div');
+    ReactDOM.render(<Provider store={store}><App /></Provider>, div);
+    ReactDOM.unmountComponentAtNode(div);
+})
   test('calls clear action, on keypad "c" click ', () => {
     wrapper.find('button[name="c"]').simulate('click')
      expect(wrapper.prop('clear')).toBeTruthy()
@@ -49,4 +55,5 @@ describe('<App />', () => {
     expect(wrapper.prop('evaluateExpression')).toBeTruthy()
 
   })
+
 })
